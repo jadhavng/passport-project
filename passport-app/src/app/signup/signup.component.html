@@ -1,0 +1,73 @@
+<div class="signup-form">
+    <form [formGroup]="signUpForm">
+        <h1>Sign Up</h1>
+        <p>Please fill in this form to create an account</p>
+        <hr>
+        <div class=" form-group">
+            <div class="row">
+
+                <div class="col">
+                    <input type="text" class="form-control" formControlName="firstName" placeholder="First Name">
+                    <div *ngIf="formErrors.firstName" class="text-danger">{{ formErrors.firstName }}</div>
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
+                    <div *ngIf="formErrors.lastName" class="text-danger">{{ formErrors.lastName }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" formControlName="email" placeholder="Email">
+            <div *ngIf="formErrors.email" class="text-danger">{{ formErrors.email }}</div>
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control" formControlName="phoneNumber" placeholder="Phone Number">
+            <div *ngIf="formErrors.phoneNumber" class="text-danger">{{ formErrors.phoneNumber }}</div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col">
+                    <select class="form-control" formControlName="gender">
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <div *ngIf="formErrors.gender" class="text-danger">{{ formErrors.gender }}</div>
+                </div>
+                <div class="col">
+                    <input type="date" class="form-control" formControlName="dateOfBirth" placeholder="Date of Birth">
+                    <div *ngIf="formErrors.dateOfBirth" class="text-danger">{{ formErrors.dateOfBirth }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" formControlName="aadharNo" placeholder="Aadhar No">
+            <div *ngIf="formErrors.aadharNo" class="text-danger">{{ formErrors.aadharNo }}</div>
+
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" formControlName="password" placeholder="Password">
+            <div *ngIf="formErrors.password" class="text-danger">{{ formErrors.password }}</div>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" formControlName="confirmPassword"
+                placeholder="Confirm Password">
+            <div *ngIf="formErrors.confirmPassword" class="text-danger">{{ formErrors.confirmPassword }}</div>
+        </div>
+        <!-- <div>
+            <label class="font-weight-bold" for="">Upload Image : </label>
+            <input type="file" id="myFile" (change)="onImageUpload($event)" formControlName="image">
+        </div> -->
+        <!-- <div>
+            <label class="font-weight-bold" for="">Upload Image:</label>
+            <input type="file" id="myFile" (change)="onImageUpload($event)">
+        </div> -->
+        <br>
+        <div class="form-group center-btn">
+            <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+        </div>
+
+        <div class="hint-text">Already have an account? <a href="login.html">Login here</a></div>
+    </form>
+</div>
