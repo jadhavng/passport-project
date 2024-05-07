@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { DataStoreServiceService } from '../DataServices/data-store-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -13,7 +15,10 @@ export class SignupComponent {
     formErrors : any;
 
     constructor(
-      private fb : FormBuilder
+      private fb : FormBuilder,
+      private dataStore : DataStoreServiceService,
+      private router : Router
+      
     ){
       this.formErrors = {};
     }
@@ -82,6 +87,20 @@ export class SignupComponent {
       }
     }
 
+   onSubmit (){
+       if(this.signUpForm.valid){
+         const formData = this.signUpForm.value;
+         //Storing data in database
+         this.dataStore.postData(formData).then((data)=>{
+          alert('Registered successfully..');
+          this.signUpForm.reset();
+          // Routing to login page
+          this.router.navigate(['login']);
+         })
+       }else{
+         this.validateForm();
+       }
+    }
 
     //Validation error message to dyanyamicaly fetch error message from model.  
     validationMessages: { [key: string]: { [key: string]: string } } = {

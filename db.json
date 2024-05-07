@@ -1,0 +1,28 @@
+{
+  "user": [
+    {
+      "id": "9842",
+      "firstName": "Nilesh",
+      "lastName": "Jadhav",
+      "email": "jadhavnilesh1308@gmail.com",
+      "phoneNumber": 9112666038,
+      "gender": "female",
+      "dateOfBirth": "2023-06-01",
+      "aadharNo": "123456789123",
+      "password": "Admin@1308",
+      "confirmPassword": "Admin@1308"
+    },
+    {
+      "id": "e871",
+      "firstName": "Mamta",
+      "lastName": "Nimbokhar",
+      "email": "Mn@gmail.com",
+      "phoneNumber": 45684262226,
+      "gender": "female",
+      "dateOfBirth": "2024-02-03",
+      "aadharNo": "123456789123",
+      "password": "123456",
+      "confirmPassword": "123456"
+    }
+  ]
+}
